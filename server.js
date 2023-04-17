@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Model from './src/app/model/NhanVienModel'
 import {engine} from 'express-handlebars';
 
 const port = 8888;
