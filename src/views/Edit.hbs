@@ -1,0 +1,23 @@
+<div class="container">
+    <a href="/" class="btn btn-success mb-3 ">Back</a>
+    <h1 class="text-center">Thêm nhân viên</h1>
+    <form action="/edit/{{data._id}}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="maNV" class="form-label">Mã nhân viên</label>
+            <input type="text" class="form-control" id="maNV" name="maNV" value="{{data.maNV}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="tenNV" class="form-label">Tên nhân viên</label>
+            <input type="text" class="form-control" id="tenNV" name="tenNV" value="{{data.tenNV}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="anhNV" class="form-label">Ảnh nhân viên</label>
+            <input type="file" accept="image/*" class="form-control" id="anhNV" name="anhNV" required>
+        </div>
+        <div class="mb-3">
+            <label for="diemTB" class="form-label">Điểm trung bình</label>
+            <input type="number" class="form-control" id="diemTB" name="diemTB" value="{{data.diemTB}}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

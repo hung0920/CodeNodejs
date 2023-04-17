@@ -1,1 +1,47 @@
-<h1>Home</h1>
+<div class="container">
+    <a class="btn btn-success w-100" href="/add">Add</a>
+    <form action="/search" class="d-flex">
+        <input type="text" class="form-control" name="maNV" id="maNV" placeholder="Mã nhân viên">
+        <button href="/search" class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="container-fluid">
+        <div class="table-responsive-lg">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Mã</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Điểm</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.maNV}}</td>
+                        <td>{{this.tenNV}}</td>
+                        <td>{{this.diemTB}}</td>
+                        <td><img src="{{this.anhNV}}" alt="Avatar" width="50" height="50"></td>
+                        <td>
+                            <a href="/edit/{{this._id}}" class="btn btn-success">Edit</a>
+                            <button class="btn btn-danger" onclick="DeleteID('{{this._id}}')">Delete</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function DeleteID(id){
+        if(confirm("Bạn có muốn xoá ?")){
+            fetch(`/delete/${id}`,{
+                method: "Delete"
+            }).then(response => location.reload());
+        }
+    }
+</script>
