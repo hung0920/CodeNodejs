@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import { engine } from 'express-handlebars';
 import multer from 'multer';
 
-const port = 8888;
+const port = 8080;
 const db = "mongodb://127.0.0.1:27017/MOB402";
 const app = express();
 
