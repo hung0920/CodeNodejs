@@ -1,0 +1,33 @@
+<div class="container">
+    <a href="/" class="btn btn-primary md-4 mt-2">Back</a>
+
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="maSP" class="form-label">Mã sản phẩm</label>
+          <input type="text"
+            class="form-control" name="maSP" id="maSP" placeholder="Mã sản phẩm" required>
+        </div>
+        <div class="mb-3">
+          <label for="tenSP" class="form-label">Tên sản phẩm</label>
+          <input type="text"
+            class="form-control" name="tenSP" id="tenSP" placeholder="Tên sản phẩm" required>
+        </div>
+        <div class="mb-3">
+          <label for="anhSP" class="form-label">Ảnh sản phẩm</label>
+          <input type="file" class="form-control" name="anhSP" id="anhSP" accept="image/*" required>
+        </div>
+        <div class="mb-3">
+          <label for="loaiSP" class="form-label">Loại sản phẩm</label>
+          <select class="form-select" name="loaiSP" id="loaiSP" required>
+                <option value="Đồ ăn">Đồ ăn</option>
+                <option value="Đồ uống">Đồ uống</option>
+                <option value="Suốt combo">Suốt combo</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="giaSP" class="form-label">Giá sản phẩm</label>
+            <input type="number" min="0" class="form-control" name="giaSP" id="giaSP" placeholder="Giá sản phẩm" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Add</button>
+    </form>
+</div>
